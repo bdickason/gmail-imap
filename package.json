@@ -1,0 +1,31 @@
+{
+  "name": "node-gmail",
+  "version": "0.0.1",
+  "description": "Easily access Gmail from your server-side node app",
+  "homepage": "",
+  "keywords": [
+    "gmail",
+    "google",
+    "xoauth2"
+  ],
+  "author": "Brad Dickason <dickason@gmail.com>",
+  "contributors": [
+    {
+      "name": "Brad Dickason",
+      "email": "dickason@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bdickason/node-gmail"
+  },
+  "dependencies": {
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "should": "~3.1.2",
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.10.1"
+  }
+}
