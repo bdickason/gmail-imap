@@ -98,9 +98,7 @@ _Note: call this after getEmail!_
 
 # Help, I need an adult!
 
-First step: Check out the `/examples` folder. It's decently documented.
-
-If you're still having issues, you can submit them here: https://github.com/bdickason/node-goodreads/issues
+If you're still having issues, you can submit them here: https://github.com/bdickason/gmail-imap/issues
 
 
 # Changelog
