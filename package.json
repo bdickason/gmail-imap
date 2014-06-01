@@ -19,13 +19,11 @@
     "type": "git",
     "url": "https://github.com/bdickason/node-gmail"
   },
-  "dependencies": {
-  "devDependencies": {
-    "mocha": "~1.17.1",
-    "should": "~3.1.2",
-  },
   "main": "index",
   "engines": {
     "node": ">= 0.10.1"
+  },
+  "dependencies": {
+    "oauth": "^0.9.12"
   }
 }
