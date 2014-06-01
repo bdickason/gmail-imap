@@ -1,4 +1,4 @@
-node-gmail
+gmail-imap
 ==========
 
 Easily access your gmail account via node.
@@ -6,17 +6,17 @@ Easily access your gmail account via node.
 Uses oauth 2.0 to auth.
 
 * Gmail API: https://developers.google.com/gmail/
-* Github: https://github.com/bdickason/node-gmail
+* Github: https://github.com/bdickason/gmail-imap
 * Twitter: [@bdickason](http://twitter.com/bdickason)
 * E-mail: dickason@gmail.com
 
 # Installation
 
 1. Install npm: `curl http://npmjs.org/install.sh | sh`
-1. Grab this module from npm: `npm install node-gmail`
+1. Grab this module from npm: `npm install gmail-imap`
 1. Include it in your program:
- * Coffeescript: `Gmail = require 'node-gmail'`
- * Javascript: `Gmail = require('node-gmail');`
+ * Coffeescript: `Gmail = require 'gmail-imap'`
+ * Javascript: `Gmail = require('gmail-imap');`
 1. Create a project to retrieve a Client ID and Client Secret here: https://console.developers.google.com/project
 1. Create a configuration object to pass in:
 ````
@@ -42,7 +42,7 @@ var cfg = {
 # Example
 
 ````
-var Gmail = require('node-gmail');
+var Gmail = require('gmail-imap');
 
 var cfg = {
     CLIENT_ID: 'Your_client_id_here',

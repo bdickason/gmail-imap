@@ -1,5 +1,5 @@
 {
-  "name": "node-gmail",
+  "name": "gmail-imap",
   "version": "0.0.1",
   "description": "Easily access Gmail from your server-side node app",
   "homepage": "",
