@@ -10,7 +10,8 @@ function Gmail(cfg) {
   */
     this.options = {
         clientId: cfg.CLIENT_ID,
-        clientSecret: cfg.CLIENT_SECRET
+        clientSecret: cfg.CLIENT_SECRET,
+        redirectUri: cfg.REDIRECT_URI
     };
 
     var server = 'https://accounts.google.com/o/';
@@ -29,7 +30,7 @@ Gmail.prototype.getAuthUrl = function() {
      */
     var authorizeConfig = {
       response_type: 'code',
-      redirect_uri: 'http://localhost:3000/callback',
+      redirect_uri: this.options.redirectUri,
       scope: 'https://mail.google.com/ https://www.googleapis.com/auth/userinfo.email', // Access user's e-mail and access user's e-mail address
       access_type: 'offline'
     };
@@ -49,7 +50,7 @@ Gmail.prototype.getAccessToken = function(code, callback) {
     var server = 'https://accounts.google.com/o/';
 
     accessParams = { 'grant_type': 'authorization_code',
-     'redirect_uri': 'http://localhost:3000/callback'
+     'redirect_uri': this.options.redirectUri
     };
 
     this.oauth2.getOAuthAccessToken(code, accessParams, function(err, access_token, refresh_token, results) {
