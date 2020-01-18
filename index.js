@@ -11,7 +11,8 @@ function Gmail(cfg) {
     this.options = {
         clientId: cfg.CLIENT_ID,
         clientSecret: cfg.CLIENT_SECRET,
-        redirectUri: cfg.REDIRECT_URI
+        redirectUri: cfg.REDIRECT_URI,
+        scope: cfg.SCOPE
     };
 
     var server = 'https://accounts.google.com/o/';
@@ -31,7 +32,7 @@ Gmail.prototype.getAuthUrl = function() {
     var authorizeConfig = {
       response_type: 'code',
       redirect_uri: this.options.redirectUri,
-      scope: 'https://mail.google.com/ https://www.googleapis.com/auth/userinfo.email', // Access user's e-mail and access user's e-mail address
+      scope: this.options.scope, // Access user's e-mail and access user's e-mail address
       access_type: 'offline'
     };
 
