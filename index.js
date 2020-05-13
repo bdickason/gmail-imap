@@ -64,22 +64,40 @@ Gmail.prototype.getAccessToken = function(code, callback) {
     });
 };
 
-Gmail.prototype.getEmail = function(access_token, callback) {
-  /*  **getEmail** - Get the user's e-mail address and profile information (Requires Access Token)
-    _Note: call this after getAccessToken!_
-    * Input: access_token
-    * Output: json `{ 'uid': '124', emails: [ value: 'blah@blah.com' ]}`
-    * Example: `gmail.getEmail(access_token, function(callback) {});`
-  */
+/* Get the user information according to the requested scopes : profile https://www.googleapis.com/auth/userinfo.email
+  * https://people.googleapis.com/v1/people/me?personFields=emailAddresses
+  * Input: access_token
+  * Output: json 
 
-  var endpoint = 'https://www.googleapis.com/plus/v1/people/me';
+  {
+    "resourceName": "people/17487878717",
+    "etag": "%EgUBCT8787989898Xhr9ZHdRMXc9",
+    "emailAddresses": [
+      {
+        "metadata": {
+          "primary": true,
+          "verified": true,
+          "source": {
+            "type": "DOMAIN_PROFILE",
+            "id": "1139856817"
+          }
+        },
+        "value": "duke@gmail.com"
+      }
+    ]
+  }
+  
+  
+  * Example: `gmail.getEmail(access_token, function(callback) {});`
+*/
+Gmail.prototype.getEmail = function(access_token, callback) {
+  var endpoint = 'https://people.googleapis.com/v1/people/me?personFields=emailAddresses';
 
   this.oauth2.get(endpoint, access_token, function(err, data) {
     if(err) {
       console.log('Error: ');
       console.log(err);
     }
-    // console.log(data);
     callback(JSON.parse(data));
   });
 
